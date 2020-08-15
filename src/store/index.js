@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { Stats } from 'webpack';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
