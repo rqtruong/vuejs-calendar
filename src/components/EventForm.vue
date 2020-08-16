@@ -24,9 +24,12 @@ export default {
         },
         create() {
             if (this.description.length > 0) {
-                this.$store.commit('addEvent', this.description);
-                this.description = '';
-                this.$store.commit('eventFormActive', false);
+                this.$store.dispatch('addEvent', this.description)
+                    .then(res => {
+                        this.description = '';
+                        this.$store.commit('eventFormActive', false);
+                    });
+
             }
         }
     },
